@@ -66,7 +66,7 @@
 					}
 
 					$account_array = str_split($account);
-					$uint5 = array_map(to_uint5, $account_array);
+					$uint5 = array_map("to_uint5", $account_array);
 					
 					$uint8[0] = (($uint5[0] << 7) + ($uint5[1] << 2) + ($uint5[2] >> 3)) % 256;
 					$uint8[1] = (($uint5[2] << 5) + $uint5[3]) % 256;
