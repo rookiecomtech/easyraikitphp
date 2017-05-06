@@ -325,7 +325,7 @@
 	// Parameters:
 	// $string -> the string you wish your account starts with
 	
-	function raiblocks_adhoc_account( $string ){
+	function raiblocks_adhoc_account( $string, $position = "start" ){
 	
 		global $rb_ext;
 		
@@ -336,10 +336,22 @@
 			$key_create = $rb_ext->key_create();
 			$account = $key_create["account"];
 			
-			if( strpos( $account, 'xrb_'.$string ) === 0 || strpos( $account, 'xrb_1'.$string ) === 0 || strpos( $account, 'xrb_3'.$string ) === 0 ){
+			if( $position == "start" ){
+			
+				if( strpos( $account, 'xrb_'.$string ) === 0 || strpos( $account, 'xrb_1'.$string ) === 0 || strpos( $account, 'xrb_3'.$string ) === 0 ){
+					
+					$i = 1;
+					
+				}
+			
+			}else{
 				
-				$i = 1;
-				
+				if( substr_compare( $account, $string, -strlen( $string ) ) ){
+					
+					$i = 1;
+					
+				}
+			
 			}
 			
 			$a++;
