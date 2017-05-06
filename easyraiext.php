@@ -346,7 +346,7 @@
 			
 			}else{
 				
-				if( substr_compare( $account, $string, -strlen( $string ) ) ){
+				if( substr_compare( $account, $string, -strlen( $string ) ) === 0 ){
 					
 					$i = 1;
 					

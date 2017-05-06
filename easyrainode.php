@@ -158,7 +158,7 @@
 		"e_sw" => array("Send from wallet","raiblocks_send_wallet",array("Wallet"=>"wallet","Destination"=>"destination","Rai"=>"amount")),
 		"e_ra" => array("Set representative for all","raiblocks_representative_all",array("Wallet"=>"wallet","Representative"=>"representative","Further"=>"furhter")),
 		"e_na" => array("Create n accounts","raiblocks_n_accounts",array("Wallet"=>"wallet","N accounts"=>"n")),
-		"e_ga" => array("Generate ad hoc account","raiblocks_adhoc_account",array("Start string"=>"string","Position (start/end)"=>"string")),
+		"e_ga" => array("Generate ad hoc account","raiblocks_adhoc_account",array("String"=>"string","Position (start/end)"=>"string")),
 		// Quit
 		"sep5" => array("","separator"),
 		"q" => array("Quit","rb_quit")
