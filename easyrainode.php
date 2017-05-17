@@ -89,6 +89,7 @@
 		if( isset($result["pending"]) ){ $result["panding_rai"] = americanu($result["balance"]/RAIN,24); }
 		if( isset($result["weight"]) ){ $result["weight_rai"] = americanu($result["weight"]/RAIN,24); }
 		if( isset($result["count"]) ){ $result["count_readable"] = americanu($result["count"],0); }
+		if( isset($result["gap"]) ){ $result["gap_readable"] = americanu($result["gap"],0); }
 		if( isset($result["block_count"]) ){ $result["count_readable"] = americanu($result["count"],0); }
 		
 		print_r($result);
@@ -272,6 +273,7 @@
 			}
 			
 			if( isset($result["count"]) ){ $result["count_readable"] = americanu($result["count"],0); }
+			if( isset($result["gap"]) ){ $result["gap_readable"] = americanu($result["gap"],0); }
 			if( isset($result["sum_balance_rai"]) ){ $result["readable_sum_balance_rai"] = americanu($result["sum_balance_rai"],0); }
 			if( isset($result["sum_pending_rai"]) ){ $result["readable_sum_pending_rai"] = americanu($result["sum_pending_rai"],0); }
 			

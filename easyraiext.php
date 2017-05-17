@@ -329,7 +329,7 @@
 	
 		global $rb_ext;
 		
-		$i = 0; $a = 0;
+		$i = 0; $a = 0; $start = time();
 
 		do{
 			
@@ -357,8 +357,12 @@
 			$a++;
 			
 		}while( $i < 1 );
+		
+		$end = time();
+		$gap = $end - $start;
 
 		$key_create["count"] = $a;
+		$key_create["gap"] = $gap;
 			
 		return $key_create;
 	
