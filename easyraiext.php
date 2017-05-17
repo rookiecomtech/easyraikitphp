@@ -234,7 +234,7 @@
 	// Parameters:
 	// $walletID -> the ID of the wallet that contains your accounts
 	// $representative -> the representative you want to set
-	// $further -> change the representative of wallet for further accounts (default set to yes)
+	// $further -> change the representative of wallet for further accounts (default set true)
 	
 	function raiblocks_representative_all( $walletID, $representative, $further = true ){
 		
