@@ -116,8 +116,8 @@
 		"wch" => array("Wallet change password","password_change",array("Wallet"=>"wallet","Password"=>"password")),
 		"wp" => array("Wallet password enter","password_enter",array("Wallet"=>"wallet","Password"=>"password")),
 		"wv" => array("Wallet valid password","password_valid",array("Wallet"=>"wallet")),
-		"wr" => array("Wallet representative","representative",array("Wallet"=>"wallet")),
-		"wrs" => array("Wallet representative set","representative_set",array("Wallet"=>"wallet","Representative"=>"representative")),
+		"wr" => array("Wallet representative","wallet_representative",array("Wallet"=>"wallet")),
+		"wrs" => array("Wallet representative set","wallet_representative_set",array("Wallet"=>"wallet","Representative"=>"representative")),
 		"wf" => array("Wallet frontiers","wallet_frontiers",array("Wallet"=>"wallet")),
 		"wcs" => array("Wallet change seed","wallet_change_seed",array("Wallet"=>"wallet","Seed"=>"seed")),
 		// Account
@@ -256,7 +256,7 @@
 			
 			}elseif( $line == "e_ra" ){
 			
-				$result = raiblocks_representative_all( $args[0], $args[1], $args[2] );
+				$result = raiblocks_representative_all( $args[0], $args[1], (int) $args[2] );
 			
 			}elseif( $line == "e_na" ){
 			

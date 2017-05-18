@@ -250,7 +250,7 @@
 				
 			);
 			
-			$return = $rbc->wallet_representative_set( $args );
+			$return = $rb_ext->wallet_representative_set( $args );
 			
 			if( $return["set"] == "1" ){ // If set correctly
 				
@@ -269,12 +269,12 @@
 			$args = array(
 			
 				"wallet" => $walletID,
-				"acccount" => $account,
+				"account" => $account,
 				"representative" => $representative
 			
 			);
 		
-			$return2 = $rbc->account_representative_set( $args );
+			$return2 = $rb_ext->account_representative_set( $args );
 			
 			if( $return2["block"] != "0000000000000000000000000000000000000000000000000000000000000000" ){ // If change representative performed correctly
 			
