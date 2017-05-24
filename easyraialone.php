@@ -47,6 +47,13 @@
 	//	$account = preg_replace('/[^a-z0-9\_]/', '', $account);
 	//
 	
+	function to_uint5($n) {
+
+		$letter_list = str_split("13456789abcdefghijkmnopqrstuwxyz");
+		return(array_search($n, $letter_list));
+
+	}
+	
 	function raiblocks_account_validate($account) {
 	
 		if (is_string($account)) {
@@ -57,13 +64,6 @@
 				$char_validation = preg_match ("/^[13456789abcdefghijkmnopqrstuwxyz]+$/", $account);
 				
 				if ($char_validation === 1) {
-	
-					function to_uint5($n) {
-	
-						$letter_list = str_split("13456789abcdefghijkmnopqrstuwxyz");
-						return(array_search($n, $letter_list));
-
-					}
 
 					$account_array = str_split($account);
 					$uint5 = array_map("to_uint5", $account_array);
