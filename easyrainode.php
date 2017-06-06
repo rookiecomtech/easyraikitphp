@@ -274,8 +274,8 @@
 			
 			if( isset($result["count"]) ){ $result["count_readable"] = americanu($result["count"],0); }
 			if( isset($result["gap"]) ){ $result["gap_readable"] = americanu($result["gap"],0); }
-			if( isset($result["sum_balance_rai"]) ){ $result["readable_sum_balance_XRB"] = americanu($result["sum_balance_XRB"]/1000000,6); }
-			if( isset($result["sum_pending_rai"]) ){ $result["readable_sum_pending_XRB"] = americanu($result["sum_pending_XRB"]/1000000,6); }
+			if( isset($result["sum_balance_rai"]) ){ $result["readable_sum_balance_XRB"] = americanu($result["sum_balance_rai"]/1000000,6); }
+			if( isset($result["sum_pending_rai"]) ){ $result["readable_sum_pending_XRB"] = americanu($result["sum_pending_rai"]/1000000,6); }
 			
 			print_r( $result );
 			
