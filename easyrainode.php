@@ -64,7 +64,7 @@
 					echo substr( $key, 0, -2 ).": ";
 					$line = stream_get_line( STDIN, 1024, PHP_EOL );
 					
-					$args[$param] = $line.RAI;
+					$args[$param] = ($line*1000000).RAI;
 				
 				}else{
 				
@@ -147,7 +147,7 @@
 		"pe" => array("Pending","pending",array("Account"=>"account","Count"=>"count")),
 		"wg" => array("Work generate","work_generate",array("Hash"=>"hash")),
 		"wca" => array("Work cancel","work_cancel",array("Hash"=>"hash")),
-		"se" => array("Send","send",array("Wallet source"=>"wallet","Account source"=>"source","Account destination"=>"destination","Rai**"=>"amount")),
+		"se" => array("Send","send",array("Wallet source"=>"wallet","Account source"=>"source","Account destination"=>"destination","XRB**"=>"amount")),
 		"ke" => array("Key expand","key_expand",array("Private key"=>"key")),
 		"kc" => array("Key create","key_create",null),
 		"re" => array("Representatives","representatives",null),
@@ -156,7 +156,7 @@
 		"sep4" => array("Extensions","separator"),
 		"e_bw" => array("Wallet balance","raiblocks_balance_wallet",array("Wallet"=>"wallet")),
 		"e_cw" => array("Clear wallet","raiblocks_clear_wallet",array("Wallet"=>"wallet","Destination"=>"destination")),
-		"e_sw" => array("Send from wallet","raiblocks_send_wallet",array("Wallet"=>"wallet","Destination"=>"destination","Rai"=>"amount")),
+		"e_sw" => array("Send from wallet","raiblocks_send_wallet",array("Wallet"=>"wallet","Destination"=>"destination","XRB"=>"amount")),
 		"e_ra" => array("Set representative for all","raiblocks_representative_all",array("Wallet"=>"wallet","Representative"=>"representative","Further"=>"furhter")),
 		"e_na" => array("Create n accounts","raiblocks_n_accounts",array("Wallet"=>"wallet","N accounts"=>"n")),
 		"e_ga" => array("Generate ad hoc account","raiblocks_adhoc_account",array("String"=>"string","Position (start/end)"=>"string")),
@@ -252,7 +252,7 @@
 			
 			}elseif( $line == "e_sw" ){
 			
-				$result = raiblocks_send_wallet( $args[0], $args[1], $args[2] );
+				$result = raiblocks_send_wallet( $args[0], $args[1], ($args[2]*1000000) );
 			
 			}elseif( $line == "e_ra" ){
 			
