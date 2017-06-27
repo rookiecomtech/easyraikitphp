@@ -40,7 +40,7 @@
 	
 	function rb_call_method($method,$params = null){
 		
-		global $rb;
+		global $rb; global $dwallets;
 		
 		$args = array();
 		
@@ -71,7 +71,7 @@
 					echo $key.": ";
 					$line = stream_get_line( STDIN, 1024, PHP_EOL );
 					
-					if($param == "wallet" && $line == ""){ $line = ERN_WALLET; }
+					if( $param == "wallet" && array_key_exists($line,$dwallets) ){ $line = $dwallets[$line]; }
 					
 					$args[$param] = $line;
 				
@@ -234,7 +234,7 @@
 					echo $key.": ";
 					$line2 = stream_get_line( STDIN, 1024, PHP_EOL );
 					
-					if($param == "wallet" && $line2 == ""){ $line2 = ERN_WALLET; }
+					if( $param == "wallet" && array_key_exists($line2,$dwallets) ){ $line2 = $dwallets[$line2]; }
 					
 					$args[] = $line2;
 					
