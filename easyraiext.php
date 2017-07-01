@@ -50,21 +50,27 @@
 		$return = $rb_ext->account_list( array( "wallet" => $walletID ) ); // Get all accounts of a wallet
 		
 		// Fetch every account
+				
+		//echo "\nCount".count($return["accounts"])."\n";
+				
+		if (isset($return["accounts"][0])) {
 		
-		foreach($return["accounts"] as $account){
-		
-			$return2 = $rb_ext->account_balance( array( "account" => $account ) ); // Get balance of account
+			foreach($return["accounts"] as $account){
 			
-			$accounts_balances["accounts"][$account] = array( // Build the return array
+				$return2 = $rb_ext->account_balance( array( "account" => $account ) ); // Get balance of account
+				
+				$accounts_balances["accounts"][$account] = array( // Build the return array
+				
+					"balance_rai" => floor( $return2["balance"]/RAIN ),
+					"pending_rai" => floor( $return2["pending"]/RAIN )
+				
+				);
+				
+				$accounts_balances["sum_balance_rai"] += $accounts_balances["accounts"][$account]["balance_rai"];
+				$accounts_balances["sum_pending_rai"] += $accounts_balances["accounts"][$account]["pending_rai"];
+				$accounts_balances["n_accounts"]++;
 			
-				"balance_rai" => floor( $return2["balance"]/RAIN ),
-				"pending_rai" => floor( $return2["pending"]/RAIN )
-			
-			);
-			
-			$accounts_balances["sum_balance_rai"] += $accounts_balances["accounts"][$account]["balance_rai"];
-			$accounts_balances["sum_pending_rai"] += $accounts_balances["accounts"][$account]["pending_rai"];
-			$accounts_balances["n_accounts"]++;
+			}
 		
 		}
 		

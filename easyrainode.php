@@ -68,10 +68,39 @@
 				
 				}else{
 				
+					if( $param == "wallet" ){
+						
+						if (count($dwallets > 0)) {
+							
+							echo "Preconfigured wallets:\n\n";
+							
+							foreach ($dwallets as $tag=>$wid) {
+							
+								echo $tag." => ".$wid."\n";
+				
+							}
+							
+							echo "\n";
+						
+						}
+					
+					}
+				
 					echo $key.": ";
+					
 					$line = stream_get_line( STDIN, 1024, PHP_EOL );
 					
-					if( $param == "wallet" && array_key_exists($line,$dwallets) ){ $line = $dwallets[$line]; }
+					if ($param == "wallet") { 
+					
+						if (array_key_exists($line,$dwallets)) {
+					
+							$line = $dwallets[$line];
+						
+						}
+							
+						$lastwallet = $line;
+						
+					}
 					
 					$args[$param] = $line;
 				
@@ -231,10 +260,38 @@
 			
 				foreach( $params as $key=>$param ){
 					
+					if( $param == "wallet" ){
+						
+						if (count($dwallets > 0)) {
+							
+							echo "Preconfigured wallets:\n\n";
+							
+							foreach ($dwallets as $tag=>$wid) {
+							
+								echo $tag." => ".$wid."\n";
+				
+							}
+							
+							echo "\n";
+						
+						}
+					
+					}
+					
 					echo $key.": ";
 					$line2 = stream_get_line( STDIN, 1024, PHP_EOL );
 					
-					if( $param == "wallet" && array_key_exists($line2,$dwallets) ){ $line2 = $dwallets[$line2]; }
+					if ($param == "wallet") { 
+					
+						if (array_key_exists($line2,$dwallets)) {
+					
+							$line2 = $dwallets[$line2];
+							
+						}
+							
+						$lastwallet = $line2;
+						
+					}
 					
 					$args[] = $line2;
 					
