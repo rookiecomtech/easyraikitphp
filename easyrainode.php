@@ -163,6 +163,7 @@
 		"aw" => array("Account weight","account_weight",array("Account"=>"account")),
 		"are" => array("Account remove","account_remove",array("Wallet"=>"wallet","Account"=>"account")),
 		"av" => array("Validate account number checksum","validate_account_number",array("Account"=>"account")),
+		"ah" => array("Account history","account_history",array("Account"=>"account","Count"=>"count")),
 		// Generic
 		"sep3" => array("Generic","separator"),
 		"as" => array("Available supply","available_supply",null),
