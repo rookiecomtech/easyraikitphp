@@ -115,7 +115,8 @@
 		$result = $rb->{$method}($args);
 		
 		if( isset($result["balance"]) ){ $result["balance_XRB"] = americanu($result["balance"]/RAIN/1000000,30); }
-		if( isset($result["pending"]) ){ $result["panding_XRB"] = americanu($result["balance"]/RAIN/1000000,30); }
+		if( isset($result["pending"]) ){ $result["pending_XRB"] = americanu($result["balance"]/RAIN/1000000,30); }
+		if( isset($result["amount"]) ){ $result["amount_XRB"] = americanu($result["amount"]/RAIN/1000000,30); }
 		if( isset($result["weight"]) ){ $result["weight_XRB"] = americanu($result["weight"]/RAIN/1000000,30); }
 		if( isset($result["count"]) ){ $result["count_readable"] = americanu($result["count"],0); }
 		if( isset($result["gap"]) ){ $result["gap_readable"] = americanu($result["gap"],0); }
@@ -149,10 +150,12 @@
 		"wrs" => array("Wallet representative set","wallet_representative_set",array("Wallet"=>"wallet","Representative"=>"representative")),
 		"wf" => array("Wallet frontiers","wallet_frontiers",array("Wallet"=>"wallet")),
 		"wcs" => array("Wallet change seed","wallet_change_seed",array("Wallet"=>"wallet","Seed"=>"seed")),
+		"wtb" => array("Wallet total balance","wallet_balance_total",array("Wallet"=>"wallet")),
 		// Account
 		"sep2" => array("Account","separator"),
 		"ab" => array("Account balance","account_balance",array("Account"=>"account")),
 		"abc" => array("Account block count","account_block_count",array("Account"=>"account")),
+		"aci" => array("Account information","account_info",array("Account"=>"account")),
 		"ar" => array("Account representative","account_representative",array("Account"=>"account")),
 		"ars" => array("Account representative set","account_representative_set",array("Wallet" => "wallet", "Account"=>"account", "Representative"=>"representative")),
 		"ac" => array("Account create","account_create",array("Wallet"=>"wallet")),
@@ -164,10 +167,16 @@
 		"are" => array("Account remove","account_remove",array("Wallet"=>"wallet","Account"=>"account")),
 		"av" => array("Validate account number checksum","validate_account_number",array("Account"=>"account")),
 		"ah" => array("Account history","account_history",array("Account"=>"account","Count"=>"count")),
+		"ar" => array("Account remove","account_remove",array("Wallet"=>"wallet","Account"=>"account")),
 		// Generic
 		"sep3" => array("Generic","separator"),
 		"as" => array("Available supply","available_supply",null),
 		"bc" => array("Block count","block_count",null),
+		"bct" => array("Block count by type","block_count_type",null),
+		"del" => array("Delegators","delegators",array("Account"=>"account")),
+		"dec" => array("Delegators count","delegators_count",array("Account"=>"account")),
+		"rim" => array("Receive minimum","receive_minimum",null),
+		"dec" => array("Receive minimum set","receive_minimum_set",array("XRB**"=>"amount")),
 		"bo" => array("Bootstrap","bootstrap",array("IP"=>"address","Port"=>"port")),
 		"fc" => array("Frontier count","frontier_count",null),
 		"rn" => array("Retrieve node version","version",null),
@@ -181,6 +190,7 @@
 		"ke" => array("Key expand","key_expand",array("Private key"=>"key")),
 		"kc" => array("Key create","key_create",null),
 		"re" => array("Representatives","representatives",null),
+		"cub" => array("Clear unchecked blocks","unchecked_clear",null),
 		"sn" => array("Stop node","stop",null),
 		// Extension
 		"sep4" => array("Extensions","separator"),
