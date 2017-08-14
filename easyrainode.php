@@ -151,6 +151,7 @@
 		"wf" => array("Wallet frontiers","wallet_frontiers",array("Wallet"=>"wallet")),
 		"wcs" => array("Wallet change seed","wallet_change_seed",array("Wallet"=>"wallet","Seed"=>"seed")),
 		"wtb" => array("Wallet total balance","wallet_balance_total",array("Wallet"=>"wallet")),
+		"wab" => array("Wallet accounts balances","wallet_balances",array("Wallet"=>"wallet")),
 		// Account
 		"sep2" => array("Account","separator"),
 		"ab" => array("Account balance","account_balance",array("Account"=>"account")),
