@@ -78,6 +78,28 @@
 	
 	}
 	
+	// Call this function to get summary balances of all wallets declared in easyrainode_config.php
+	// Parameters: none
+	
+	function raiblocks_summary_wallets() {
+	
+		global $dwallets;
+		$wallets_balances = array( "sum_balance_rai" => 0, "sum_pending_rai" => 0 );
+		
+		foreach ($dwallets as $tag=>$id){
+		
+			$return = raiblocks_balance_wallet($id);
+			$wallets_balances[$tag] = array( "balance" => $return["sum_balance_rai"], "pending" => $return["sum_pending_rai"] );
+			
+			$wallets_balances["sum_balance_rai"] += $return["sum_balance_rai"];
+			$wallets_balances["sum_pending_rai"] += $return["sum_pending_rai"];
+			
+		}
+		
+		return $wallets_balances;
+		
+	}
+	
 	// Call this function to clear a wallet sending all funds to an account
 	// Parameters:
 	// $walletID -> the ID of the wallet you want to clear

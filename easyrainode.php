@@ -195,6 +195,7 @@
 		"sn" => array("Stop node","stop",null),
 		// Extension
 		"sep4" => array("Extensions","separator"),
+		"e_bws" => array("Wallets balances","raiblocks_summary_wallets",null),
 		"e_bw" => array("Wallet balance","raiblocks_balance_wallet",array("Wallet"=>"wallet")),
 		"e_cw" => array("Clear wallet","raiblocks_clear_wallet",array("Wallet"=>"wallet","Destination"=>"destination")),
 		"e_sw" => array("Send from wallet","raiblocks_send_wallet",array("Wallet"=>"wallet","Destination"=>"destination","XRB"=>"amount")),
@@ -311,7 +312,11 @@
 			
 			}
 			
-			if( $line == "e_bw" ){
+			if( $line == "e_bws" ){
+			
+				$result = raiblocks_summary_wallets();
+			
+			}elseif( $line == "e_bw" ){
 			
 				$result = raiblocks_balance_wallet( $args[0] );
 			
