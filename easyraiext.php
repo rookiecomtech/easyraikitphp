@@ -89,7 +89,7 @@
 		foreach ($dwallets as $tag=>$id){
 		
 			$return = raiblocks_balance_wallet($id);
-			$wallets_balances["wallets"][$id] = array( "tag" => $tag, "balance" => $return["sum_balance_rai"], "pending" => $return["sum_pending_rai"] );
+			$wallets_balances["wallets"][$id] = array( "tag" => $tag, "balance_rai" => $return["sum_balance_rai"], "pending_rai" => $return["sum_pending_rai"] );
 			
 			$wallets_balances["sum_balance_rai"] += $return["sum_balance_rai"];
 			$wallets_balances["sum_pending_rai"] += $return["sum_pending_rai"];
