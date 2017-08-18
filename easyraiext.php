@@ -84,12 +84,12 @@
 	function raiblocks_summary_wallets() {
 	
 		global $dwallets;
-		$wallets_balances = array( "sum_balance_rai" => 0, "sum_pending_rai" => 0 );
+		$wallets_balances = array( "wallets" => array(), "sum_balance_rai" => 0, "sum_pending_rai" => 0 );
 		
 		foreach ($dwallets as $tag=>$id){
 		
 			$return = raiblocks_balance_wallet($id);
-			$wallets_balances[$tag] = array( "balance" => $return["sum_balance_rai"], "pending" => $return["sum_pending_rai"] );
+			$wallets_balances["wallets"][$id] = array( "tag" => $tag, "balance" => $return["sum_balance_rai"], "pending" => $return["sum_pending_rai"] );
 			
 			$wallets_balances["sum_balance_rai"] += $return["sum_balance_rai"];
 			$wallets_balances["sum_pending_rai"] += $return["sum_pending_rai"];
