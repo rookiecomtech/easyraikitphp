@@ -232,14 +232,8 @@
 	$cversion = $cversion["node_vendor"];
 	$cversion = str_replace("RaiBlocks ","",$cversion);
 	
-	// Latest version
-	$url = "https://raiblockscommunity.net/get/latest.php";
-	$json = file_get_contents($url);
-	$json_data = json_decode($json, true);
-	$lversion = $json_data["node"];
-	
-	if( $lversion == $cversion ){ echo "\n\tRunning latest version: ".$cversion; }
-	else{ echo "\n\tNEW VERSION AVAILABLE: ".$lversion; }
+	echo "\n\tRunning version: ".$cversion;
+
 	
 	echo "\n";
 	
