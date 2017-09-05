@@ -234,7 +234,6 @@
 	
 	echo "\n\tRunning version: ".$cversion;
 
-	
 	echo "\n";
 	
 	while( true ){
