@@ -35,7 +35,7 @@
 	$raiblocks = new RaiBlocks('host','port');
 	// Defaults are:
 	//	host = localhost
-	//	port = 7076
+	//	port = 8086
 	//	proto = http
 
 	// If you wish to make an SSL connection you can set an optional CA certificate or leave blank

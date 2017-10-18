@@ -7,7 +7,7 @@
 	// Node connection parameters
 	
 	DEFINE("RB_HOST","127.0.0.1"); // RaiBlocks node host
-	DEFINE("RB_PORT","7076"); // RaiBlocks node port
+	DEFINE("RB_PORT","8086"); // RaiBlocks node port
 	DEFINE("RB_URL",null); // I don't know what this is for, just leave null
 	
 	// Other parameters

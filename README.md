@@ -10,3 +10,5 @@ PHP library for RaiBlocks node and operations
 **easyrainode.php** | manage node with CLI
 
 **easyrainode_config.php** | configuration file for easyrainode.php
+
+Default RPC ports has been set to 8086 according with raiblockscommunity.net
